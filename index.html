@@ -25,41 +25,59 @@
                 <img class="img-fluid banner" src="./images/banner3.jpg" alt="An Image" srcset="">
             </div>
             <!-- calculation div  -->
-            <div class="calculation d-flex flex-column col-lg-6 col-12 ">
+            <div class="calculation d-flex flex-column col-lg-6 col-12">
                 <!-- income part -->
-                <div class="row g-2 justify-content-center py-3">
+                <div class="row g-2 justify-content-center">
                     <h5 class="text-center fw-bold">Income</h5>
                     <div class="col-auto">
                         <label for="income" class="col-form-label fw-bold fs-6">Income:</label>
                     </div>
                     <div class="col-auto">
-                        <input type="text" id="income" class="form-control">
+                        <input type="text" id="income" class="form-control" required>
+
                     </div>
+                    <div class="col-auto error-message" id="income-error-message">
+                        <p class="text-danger my-0"> The amount of income is invalid. Please enter a positive number!</p>
+
+                    </div>
+
                 </div>
                 <!-- income part -->
 
                 <!-- expenses part -->
-                <div class="row g-2 justify-content-center py-3">
+                <div class="row g-2 justify-content-center">
                     <h5 class="text-center fw-bold">Expenses</h5>
                     <div class="col-auto">
                         <label for="food" class="col-form-label fw-bold fs-6">Food:</label>
                     </div>
                     <div class="col-auto">
-                        <input type="text" id="food" class="form-control">
+                        <input type="text" id="food" class="form-control" required>
+                    </div>
+                    <div class="col-auto error-message" id="food-error-message">
+                        <p class="text-danger my-0">The amount of food is invalid. Please enter a positive number!</p>
+
                     </div>
                     <div></div>
                     <div class="col-auto">
                         <label for="rent" class="col-form-label fw-bold fs-6">Rent:</label>
                     </div>
                     <div class="col-auto">
-                        <input type="text" id="rent" class="form-control">
+                        <input type="text" id="rent" class="form-control" required>
+                    </div>
+                    <div class="col-auto error-message" id="rent-error-message">
+                        <p class="text-danger my-0">The amount of rent is invalid. Please enter a positive number!</p>
+
                     </div>
                     <div></div>
                     <div class="col-auto">
                         <label for="cloth" class="col-form-label fw-bold fs-6">Cloth:</label>
                     </div>
                     <div class="col-auto">
-                        <input type="text" id="cloth" class="form-control">
+                        <input type="text" id="cloth" class="form-control" required>
+                    </div>
+                    <div class="col-auto error-message" id="cloth-error-message">
+                        <p class="text-danger my-0">The amount of cloth is invalid. Please enter a positive number!</p>
+
                     </div>
                     <!-- expenses part -->
                     <div></div>
