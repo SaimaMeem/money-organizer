@@ -10,13 +10,8 @@
 
 .banner {
     object-fit: cover;
-    height: 600px;
+    height: 700px;
 }
-
-
-/* .calculation {
-    background-color: #F8F8F8;
-} */
 
 .buttons {
     background-color: #59A5FF;

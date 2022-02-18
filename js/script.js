@@ -10,22 +10,16 @@ const saveButton = document.getElementById("save-button");
 const calculateButton = document.getElementById("calculate-button");
 
 function calculate() {
-
-    // expense calculation
     const totalEx = parseFloat(foodInput.value) + parseFloat(rentInput.value) + parseFloat(clothInput.value);
-
+    //error handling for expenses
     if (totalEx > parseFloat(incomeInput.value)) {
         console.log(totalEx, parseFloat(incomeInput.value));
         const errorMessage = document.getElementById('calculate-error-message');
         errorMessage.style.visibility = 'visible';
     } else {
         totalExpenses.innerText = totalEx.toLocaleString();
-
-
-        //balance calculation
         const totalBAmount = parseFloat(incomeInput.value) - totalEx;
         balanceAmount.innerText = totalBAmount.toLocaleString();
-        //balance calculation
         foodInput.value = '';
         rentInput.value = '';
         clothInput.value = '';
@@ -42,7 +36,7 @@ function save() {
     const saved = tempBalance * (parseFloat(saveInput.value) / 100);
     const remaining = tempBalance - saved;
 
-
+    //error handling for savings
     if (saved > remaining) {
         const errorMessage = document.getElementById('save-error-message');
         errorMessage.style.visibility = 'visible';
@@ -64,6 +58,7 @@ function validateInputFields(val, inputName) {
 }
 calculateButton.addEventListener('click', calculate);
 saveButton.addEventListener('click', save);
+
 incomeInput.addEventListener('focusout', function() {
     validateInputFields(this, 'income');
 });
