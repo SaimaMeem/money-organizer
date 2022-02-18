@@ -37,7 +37,7 @@ function save() {
     const remaining = tempBalance - saved;
 
     //error handling for savings
-    if (saved > remaining) {
+    if (saved > tempBalance) {
         const errorMessage = document.getElementById('save-error-message');
         errorMessage.style.visibility = 'visible';
     } else {
