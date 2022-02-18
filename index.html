@@ -83,6 +83,10 @@
                     <div></div>
                     <div class="col-auto text-center">
                         <button id="calculate-button" class="btn buttons fw-bold text-white shadow-sm" type="button">Calculate</button>
+                        <div class="col-auto error-message" id="calculate-error-message">
+                            <p class="text-danger my-0">The amount of expenses is more than income amount!</p>
+
+                        </div>
                     </div>
                 </div>
 
@@ -100,6 +104,10 @@
                     </div>
                     <div class="col-auto text-center">
                         <button id="save-button" class="btn buttons fw-bold text-white shadow-sm px-5" type="button">Save</button>
+                    </div>
+                    <div class="col-auto error-message" id="save-error-message">
+                        <p class="text-danger my-0">The amount of savings is more than balance amount!</p>
+
                     </div>
                 </div>
                 <p class="text-center fw-bold fs-6 my-1">Saving Amount: <span id="saving-amount"></span></p>

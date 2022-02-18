@@ -13,18 +13,25 @@ function calculate() {
 
     // expense calculation
     const totalEx = parseFloat(foodInput.value) + parseFloat(rentInput.value) + parseFloat(clothInput.value);
-    totalExpenses.innerText = totalEx.toLocaleString();
-    // expense calculation
 
-    //balance calculation
-    const totalBAmount = parseFloat(incomeInput.value) - totalEx;
-    balanceAmount.innerText = totalBAmount.toLocaleString();
-    //balance calculation
-    foodInput.value = '';
-    rentInput.value = '';
-    clothInput.value = '';
-    incomeInput.value = '';
-    return totalBAmount;
+    if (totalEx > parseFloat(incomeInput.value)) {
+        console.log(totalEx, parseFloat(incomeInput.value));
+        const errorMessage = document.getElementById('calculate-error-message');
+        errorMessage.style.visibility = 'visible';
+    } else {
+        totalExpenses.innerText = totalEx.toLocaleString();
+
+
+        //balance calculation
+        const totalBAmount = parseFloat(incomeInput.value) - totalEx;
+        balanceAmount.innerText = totalBAmount.toLocaleString();
+        //balance calculation
+        foodInput.value = '';
+        rentInput.value = '';
+        clothInput.value = '';
+        incomeInput.value = '';
+        return totalBAmount;
+    }
 }
 
 function save() {
@@ -33,16 +40,23 @@ function save() {
     //removing thousands seperator and converting into a number
     const tempBalance = parseFloat(balanceAmount.innerText.replace(/,/g, ""));
     const saved = tempBalance * (parseFloat(saveInput.value) / 100);
-    savingAmount.innerText = saved.toLocaleString();
     const remaining = tempBalance - saved;
-    remainingBalance.innerText = remaining.toLocaleString();
-    saveInput.value = '';
+
+
+    if (saved > remaining) {
+        const errorMessage = document.getElementById('save-error-message');
+        errorMessage.style.visibility = 'visible';
+    } else {
+        savingAmount.innerText = saved.toLocaleString();
+        remainingBalance.innerText = remaining.toLocaleString();
+        saveInput.value = '';
+    }
+
 }
 
 function validateInputFields(val, inputName) {
     const value = parseFloat(val.value);
     const errorMessage = document.getElementById(inputName + '-error-message');
-    console.log(errorMessage);
     if (isNaN(value) || value < 0) {
         // console.log(inputName + " amount is invalid. Please enter a positive number!");
         errorMessage.style.visibility = 'visible';
@@ -64,14 +78,22 @@ clothInput.addEventListener('focusout', function() {
 });
 
 incomeInput.addEventListener('focus', function() {
+
     document.getElementById(this.id + '-error-message').style.visibility = 'hidden';
+    document.getElementById('calculate-error-message').style.visibility = 'hidden ';
 });
 foodInput.addEventListener('focus', function() {
     document.getElementById(this.id + '-error-message').style.visibility = 'hidden';
+    document.getElementById('calculate-error-message').style.visibility = 'hidden ';
 });
 rentInput.addEventListener('focus', function() {
     document.getElementById(this.id + '-error-message').style.visibility = 'hidden';
+    document.getElementById('calculate-error-message').style.visibility = 'hidden ';
 });
 clothInput.addEventListener('focus', function() {
+    document.getElementById(this.id + '-error-message').style.visibility = 'hidden';
+    document.getElementById('calculate-error-message').style.visibility = 'hidden ';
+});
+saveInput.addEventListener('focus', function() {
     document.getElementById(this.id + '-error-message').style.visibility = 'hidden';
 });
