@@ -12,3 +12,20 @@
     object-fit: cover;
     height: 600px;
 }
+
+
+/* .calculation {
+    background-color: #F8F8F8;
+} */
+
+.buttons {
+    background-color: #59A5FF;
+    transition: all ease 0.2s;
+}
+
+.buttons:hover {
+    transform: scale(0.9);
+}
+
+
+/* main section */
