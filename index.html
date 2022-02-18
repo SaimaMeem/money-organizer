@@ -22,9 +22,11 @@
         <!-- main screen section -->
         <section class="main-screen row row-cols-2 justify-content-between mb-5">
             <div class="banner-image d-flex flex-column  col-lg-6 col-12">
-                <img class="img-fluid banner" src="./images/banner3.jpg" alt="" srcset="">
+                <img class="img-fluid banner" src="./images/banner3.jpg" alt="An Image" srcset="">
             </div>
+            <!-- calculation div  -->
             <div class="calculation d-flex flex-column col-lg-6 col-12 ">
+                <!-- income part -->
                 <div class="row g-2 justify-content-center py-3">
                     <h5 class="text-center fw-bold">Income</h5>
                     <div class="col-auto">
@@ -34,6 +36,9 @@
                         <input type="text" id="income" class="form-control">
                     </div>
                 </div>
+                <!-- income part -->
+
+                <!-- expenses part -->
                 <div class="row g-2 justify-content-center py-3">
                     <h5 class="text-center fw-bold">Expenses</h5>
                     <div class="col-auto">
@@ -56,11 +61,13 @@
                     <div class="col-auto">
                         <input type="text" id="cloth" class="form-control">
                     </div>
+                    <!-- expenses part -->
                     <div></div>
                     <div class="col-auto text-center">
-                        <button id="calculate" class="btn buttons fw-bold text-white shadow-sm" type="button">Calculate</button>
+                        <button id="calculate-button" class="btn buttons fw-bold text-white shadow-sm" type="button">Calculate</button>
                     </div>
                 </div>
+
                 <p class="text-center fw-bold fs-6 my-1">Total Expenses: <span id="total-expenses"></span></p>
                 <p class="text-center fw-bold fs-6 my-1">Balance: <span id="balance"></span></p>
                 <div class="row g-2 justify-content-center py-3">
@@ -74,12 +81,13 @@
                         <p class="text-center fw-bolder fs-6 my-1">%</p>
                     </div>
                     <div class="col-auto text-center">
-                        <button id="save" class="btn buttons fw-bold text-white shadow-sm px-5" type="button">Save</button>
+                        <button id="save-button" class="btn buttons fw-bold text-white shadow-sm px-5" type="button">Save</button>
                     </div>
                 </div>
                 <p class="text-center fw-bold fs-6 my-1">Saving Amount: <span id="saving-amount"></span></p>
                 <p class="text-center fw-bold fs-6 my-1">Remaining Balance: <span id="rem-balance"></span></p>
             </div>
+            <!-- calculation div  -->
         </section>
         <!-- main screen section -->
     </main>
